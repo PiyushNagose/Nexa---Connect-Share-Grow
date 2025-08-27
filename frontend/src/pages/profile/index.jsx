@@ -21,11 +21,7 @@ export default function Profile() {
 
   useEffect(() => {
     dispatch(getAboutUser({ token: localStorage.getItem("token") }));
-    const interval = setInterval(() => {
-      dispatch(getAllPost());
-    }, 5000);
-
-    return () => clearInterval(interval);
+    dispatch(getAllPost());
   }, []);
 
   useEffect(() => {
