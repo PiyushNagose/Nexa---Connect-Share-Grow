@@ -38,7 +38,7 @@ export default function Dashboard() {
 
     const interval = setInterval(() => {
       dispatch(getAllPost());
-    }, 5000); 
+    }, 3000);
 
     return () => clearInterval(interval); // cleanup on unmount
   }, [authState.isTokenThere]);
