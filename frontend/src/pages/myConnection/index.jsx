@@ -17,6 +17,10 @@ export default function MyConnection() {
 
   // Fetch connections on load
   useEffect(() => {
+    dispatch(getMyConnectionRequest({ token: localStorage.getItem("token") }));
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       dispatch(
         getMyConnectionRequest({ token: localStorage.getItem("token") })
